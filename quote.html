@@ -39,7 +39,14 @@
                 quoteElement.textContent = `"${quote}"`;
                 authorElement.textContent = `- ${author}`;
             } 
+            catch (error) {
+                console.error('Failed to fetch quote:', error);
+                quoteElement.textContent = 'Failed to fetch a new quote.';
+                authorElement.textContent = '';
+            }
         }
+
+        
 
         function getQuote() {
             fetchQuote();
